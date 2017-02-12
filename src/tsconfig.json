@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+
+        "traceResolution": true,
+        "noImplicitReturns": true,
+        "declaration": false,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "mapRoot": "./",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "target": "es5",
+        "typeRoots": [
+            "../node_modules/@types"
+        ]
+    }
+}
