@@ -1,0 +1,1 @@
+NODE_ENV=development PORT=3333 ts-node --inspect --debug-brk --project src src/main.ts
