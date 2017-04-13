@@ -1,1 +1,0 @@
-NODE_ENV=production PORT=3333 ts-node --project src src/main.ts
