@@ -21,8 +21,7 @@ export class ConfigurationService {
 
     environment = {
         get type(): 'production' | 'development' {
-            let environment = process.env.NODE_ENV;
-
+            let environment = process.env.npm_config_NODE_ENV;
             switch (environment) {
                 case 'production':
                 case 'development':
@@ -37,8 +36,8 @@ export class ConfigurationService {
         },
 
         get port() {
-            if (process.env.PORT) {
-                return +process.env.PORT;
+            if (process.env.npm_config_PORT) {
+                return +process.env.npm_config_PORT;
             }
 
             return 3333;
