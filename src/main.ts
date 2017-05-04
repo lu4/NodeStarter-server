@@ -1,7 +1,5 @@
 import 'reflect-metadata';
 
-import './polyfills.ts';
-
 import { JwtService } from './app/jwt.service';
 import { TimeService } from './app/time.service';
 import { UuidService } from './app/uuid.service';
