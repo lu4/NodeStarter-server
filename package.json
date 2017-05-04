@@ -1,13 +1,12 @@
 {
-  "name": "starter",
+  "name": "node-starter",
   "version": "0.0.0",
   "license": "MIT",
-  "angular-cli": {},
   "main_path": "src/main.ts",
   "scripts": {
     "dev": "ts-node --project src ${npm_package_main_path} --NODE_ENV development",
     "prod": "ts-node --project src ${npm_package_main_path}",
-    "debug": "ts-node --project --debug-brk src ${npm_package_main_path} --NODE_ENV development",
+    "debug": "ts-node --project src ${npm_package_main_path} --NODE_ENV development --inspect --debug-brk",
 
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test"
@@ -36,16 +35,19 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "@angular-cli": "^1.0.0",
-    "codelyzer": "^2.0.0-beta.4",
-    "jasmine-core": "2.5.2",
-    "jasmine-spec-reporter": "4.0.0",
-    "karma": "1.6.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-cli": "^1.0.1",
-    "karma-jasmine": "^1.0.2",
-    "karma-remap-istanbul": "^0.6.0",
-    "tslint": "^5.1.0",
-    "typescript": "~2.2.2"
+    "@types/jasmine": "2.5.47",
+    "@types/node": "~7.0.13",
+    "jasmine-core": "~2.5.2",
+    "jasmine-spec-reporter": "~4.0.0",
+    "karma": "~1.6.0",
+    "karma-chrome-launcher": "~2.0.0",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.0",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.1.0",
+    "ts-node": "~3.0.2",
+    "tslint": "~5.1.0",
+    "typescript": "~2.2.0"
   }
 }
