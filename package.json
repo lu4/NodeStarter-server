@@ -4,21 +4,21 @@
   "license": "MIT",
   "main_path": "src/main.ts",
   "scripts": {
-    "dev": "ts-node --project src ${npm_package_main_path} --NODE_ENV development",
     "prod": "ts-node --project src ${npm_package_main_path}",
-    "debug": "ts-node --project src ${npm_package_main_path} --NODE_ENV development --inspect --debug-brk",
-
+    "dev": "ts-node --project src ${npm_package_main_path} --NODE_ENV development",
+    "debug": "ts-node --inspect=3334 --project src ${npm_package_main_path} --NODE_ENV development",
+    "debug-brk": "ts-node  --inspect-brk=3334 --project src ${npm_package_main_path} --NODE_ENV development",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
-    "@types/body-parser": "1.16.3",
-    "@types/jasmine": "2.5.47",
+    "@types/body-parser": "1.16.8",
+    "@types/jasmine": "2.8.3",
     "@types/node": "^7.0.13",
     "@types/winston": "^2.2.0",
     "@types/engine.io": "https://github.com/lu4/types-engine.io.git",
-    "@types/helmet": "0.0.34",
+    "@types/helmet": "0.0.37",
     "@types/morgan": "^1.7.32",
     "body-parser": "^1.16.0",
     "core-js": "^2.4.1",
@@ -35,19 +35,19 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "@types/jasmine": "2.5.47",
-    "@types/node": "~7.0.13",
-    "jasmine-core": "~2.5.2",
-    "jasmine-spec-reporter": "~4.0.0",
-    "karma": "~1.6.0",
-    "karma-chrome-launcher": "~2.0.0",
+    "@types/jasmine": "2.8.3",
+    "@types/node": "~8.5.2",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.0",
+    "karma-chrome-launcher": "~2.2.0",
     "karma-cli": "~1.0.1",
     "karma-coverage-istanbul-reporter": "^1.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.1.0",
-    "ts-node": "~3.0.2",
-    "tslint": "~5.1.0",
-    "typescript": "~2.2.0"
+    "protractor": "~5.2.2",
+    "ts-node": "~4.1.0",
+    "tslint": "~5.8.0",
+    "typescript": "~2.6.2"
   }
 }
