@@ -1,48 +1,57 @@
+// import { svd } from 'node-svd';
 import 'reflect-metadata';
+
+import * as winston from 'winston';
 
 import { JwtService } from './app/jwt.service';
 import { TimeService } from './app/time.service';
 import { UuidService } from './app/uuid.service';
-import { TokenService } from './app/token.service';
-import { UsersService } from './app/users.service';
 import { ServerService } from './app/server.service';
 import { ExpressService } from './app/express.service';
 import { RoutingService } from './app/routing.service';
+import { WebSocketService } from './app/web-socket.service';
 import { ApplicationService } from './app/application.service';
-import { SocketServerService } from './app/socket-server.service';
 import { ConfigurationService } from './app/configuration.service';
 
 import { IndexRoute } from './app/routes/index.route';
 import { ExpressRouterService } from './app/express-router.service';
 
 import { ReflectiveInjector } from 'injection-js';
+// ------------------------------------------------------------------------
+import { Matrix } from 'sylvester';
 
 class Program {
-    public static main(): void {
+    public static async main(): Promise<void> {
         const injector = ReflectiveInjector.resolveAndCreate([
             ApplicationService,
 
             JwtService,
             TimeService,
             UuidService,
-            TokenService,
-            UsersService,
             ServerService,
             ExpressService,
             RoutingService,
-            SocketServerService,
+            WebSocketService,
             ConfigurationService,
 
             IndexRoute,
             ExpressRouterService
         ]);
+        //-----------------------------------------
+        
+        // Entry point
+        let server: ApplicationService = injector.get(ApplicationService);
+        
+        winston.log('info', 'Launching server...');
 
-        let server = <ApplicationService>injector.get(ApplicationService);
+        await server.start();
 
-        console.log('Launching server...');
-        server.start().then(() => {
-            console.log('Server successfully launched!');
-        });
+        // Eagerly load and initialize services
+        let websocketService: WebSocketService = injector.get(WebSocketService);
+
+        await websocketService.initialize();
+        
+        winston.log('info', 'Launching server...Success!');
     }
 }
 

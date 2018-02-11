@@ -1,7 +1,6 @@
 import { Injectable } from 'injection-js';
 import { ExpressRouterService } from './express-router.service';
 
-
 import { IRoute, Route } from './route';
 import { IndexRoute } from './routes/index.route';
 

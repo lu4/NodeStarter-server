@@ -2,9 +2,8 @@ import { Injectable } from 'injection-js';
 
 @Injectable()
 export class ConfigurationService {
-    sockets = {
-        ttl: 1000 * 60 * 60 * 24 * 30,
-        compression: false,
+    webSocket = {
+        port: 9999
     };
 
     security = {
