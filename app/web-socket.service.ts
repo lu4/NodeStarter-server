@@ -19,19 +19,6 @@ import { write, writeFile } from 'fs';
 const ClientLoginRejectionEvent = JSON.stringify({ type: 'ClientLoginRejectionEvent' })
 const ClientLoginConfirmationEvent = JSON.stringify({ type: 'ClientLoginConfirmationEvent' });
 
-export enum ReadingType
-{
-    Gps = 0,
-    Arkit = 1,
-    Motion = 2,
-    Heading = 3,
-    Bluetooth = 4,
-    Gyroscope = 5,
-    PointCloud = 6,
-    Magnetometer = 7,
-    Accelerometer = 8
-}
-
 @Injectable()
 export class WebSocketService {
     private server: Ws.Server;
