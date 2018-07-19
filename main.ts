@@ -18,7 +18,6 @@ import { ExpressRouterService } from './app/express-router.service';
 
 import { ReflectiveInjector } from 'injection-js';
 // ------------------------------------------------------------------------
-import { Matrix } from 'sylvester';
 
 class Program {
     public static async main(): Promise<void> {

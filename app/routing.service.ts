@@ -4,10 +4,6 @@ import { ExpressRouterService } from './express-router.service';
 import { IRoute, Route } from './route';
 import { IndexRoute } from './routes/index.route';
 
-import express = require('express');
-
-import * as core from 'express-serve-static-core';
-
 @Injectable()
 export class RoutingService extends Route {
     constructor(
